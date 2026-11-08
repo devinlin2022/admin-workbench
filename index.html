@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>行政工作台</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🗂️</text></svg>">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="app">
+  <aside id="sidebar">
+    <div class="brand">
+      <span class="brand-mark">行</span>
+      <div>
+        <div class="brand-name">行政工作台</div>
+        <div class="brand-sub">Admin Workbench</div>
+      </div>
+    </div>
+    <nav id="nav"></nav>
+    <div class="side-foot">
+      <span class="dot"></span>数据保存在本机 localStorage
+    </div>
+  </aside>
+
+  <div id="main">
+    <header id="topbar">
+      <button id="searchBtn" class="search-btn" title="全局搜索 (Ctrl+K)">
+        <span class="search-ico">⌕</span>
+        <span class="search-ph">搜索待办、合同、制度、资产…</span>
+        <kbd>Ctrl K</kbd>
+      </button>
+      <div class="top-actions">
+        <button id="notifyBtn" class="btn btn-ghost" title="开启/关闭浏览器到期提醒">🔔 提醒</button>
+        <button id="exportBtn" class="btn btn-ghost" title="导出全部数据为 JSON 备份">⬇ 备份</button>
+        <button id="importBtn" class="btn btn-ghost" title="从 JSON 备份还原">⬆ 还原</button>
+        <input type="file" id="importFile" accept="application/json" hidden>
+      </div>
+    </header>
+    <main id="view"></main>
+  </div>
+</div>
+
+<div id="searchModal" class="modal-mask hidden">
+  <div class="search-panel">
+    <input id="searchInput" class="search-input" placeholder="全局搜索：输入关键词，Enter 跳转第一个结果" autocomplete="off">
+    <div id="searchResults" class="search-results"></div>
+  </div>
+</div>
+
+<div id="modal" class="modal-mask hidden">
+  <div class="modal-panel">
+    <div class="modal-head">
+      <span id="modalTitle"></span>
+      <button id="modalClose" class="modal-close">✕</button>
+    </div>
+    <div id="modalBody" class="modal-body"></div>
+  </div>
+</div>
+
+<div id="toast" class="toast hidden"></div>
+
+<script src="vendor/lunar.js"></script>
+<script src="vendor/chart.umd.min.js"></script>
+<script src="vendor/marked.min.js"></script>
+<script src="vendor/purify.min.js"></script>
+<script src="vendor/xlsx.full.min.js"></script>
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
