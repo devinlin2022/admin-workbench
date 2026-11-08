@@ -44,6 +44,8 @@ python -m http.server 8080
 
 ## 在线访问
 
-通过 GitHub Pages 部署：`https://<用户名>.github.io/<仓库名>/`
+已部署到 GitHub Pages：**https://devinlin2022.github.io/admin-workbench/**
+
+需求文档见 [`docs/需求文档.md`](docs/需求文档.md)。
 
 > 注意：GitHub Pages 是公开静态托管，页面本身无登录。所有数据保存在**访问者自己浏览器**的 localStorage，不会上传到服务器。
